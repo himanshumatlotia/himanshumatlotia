@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himanshu Matlotia — UX/UI Designer</title>
+  
+  <!-- Meta & SEO -->
+  <meta name="description" content="Portfolio of Himanshu Matlotia — UX/UI Designer crafting high-impact digital experiences for mobile, conversion, and operations.">
+  <meta property="og:title" content="Himanshu Matlotia — UX/UI Designer">
+  <meta property="og:description" content="Portfolio of Himanshu Matlotia — UX/UI Designer crafting high-impact digital experiences.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+
+  <!-- Google Fonts: Anton (Bold display headline) + Plus Jakarta Sans (Clean UI body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <div class="site-wrapper">
+    
+    <!-- ============================================================
+         1. HERO SECTION
+         ============================================================ -->
+    <header class="hero-section" id="hero">
+      <div class="site-container">
+        
+        <!-- Electric Blue Hero Card with Dotted Pattern Overlay -->
+        <div class="hero-card">
+          
+          <!-- Dotted grid background overlay -->
+          <div class="hero-card__pattern" aria-hidden="true"></div>
+          <!-- Interactive cursor spotlight glow on white dots -->
+          <div class="hero-card__pattern-glow" aria-hidden="true"></div>
+
+          <!-- Hero Top Navigation -->
+          <nav class="hero-nav" aria-label="Main Navigation">
+            <a href="#work" class="hero-nav__link">WORK</a>
+            <a href="https://drive.google.com/file/d/1Zidk40xp9YBlxyGMCen4q8tyqnFkjrZ0/view?usp=sharing" class="hero-nav__link" target="_blank" rel="noopener noreferrer" aria-label="View Resume (Google Drive)">RESUME</a>
+          </nav>
+
+          <!-- Center Role Badge ("UX/UI DESIGNER" + Sitting Cat) -->
+          <div class="hero-badge-wrapper">
+            <h2 class="hero-badge">
+              <span class="hero-badge__label">UX/UI</span>
+              <span class="hero-badge__tag" id="hero-designer-tag">
+                <!-- Small sitting white cat resting on top of DESIGNER, causing the tilt! -->
+                <span class="hero-badge__cat" id="sitting-badge-cat" aria-label="Cute sitting white cat weighing down the sticker" role="button" tabindex="0" title="Purr... I tilted this! 🐾">
+                  <img src="assets/sitting-cat.svg" alt="Small sitting white cat" width="56" height="46" />
+                </span>
+                DESIGNER
+              </span>
+            </h2>
+          </div>
+
+          <!-- Main Condensed Headline -->
+          <h1 class="hero-title">
+            HIMANSHU MATLOTIA
+          </h1>
+
+          <!-- Hanging Black Cat Clinging to Hero Card bottom edge -->
+          <div class="hero-hanging-cat" id="hero-hanging-cat" aria-label="Interactive hanging cat (Click me!)" role="button" tabindex="0" title="Click me to meow!">
+            <img src="assets/hanging-cat-1.png" id="hanging-cat-img" alt="Black cat clinging to hero card edge" width="155" height="319" loading="eager" />
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT AREA
+         ============================================================ -->
+    <main id="main-content">
+      
+      <!-- SECTION 2: SELECTED WORK (CASE STUDIES) -->
+      <section class="case-studies-section" id="work" aria-label="Selected Work">
+        <div class="site-container">
+          <div class="case-studies__watermark watermark-text" aria-hidden="true">
+            CASE<br>STUDIES
+          </div>
+          <!-- Dynamically populated by js/home.js -->
+          <div id="projects-container" class="case-studies__grid"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: COMPANIES I'VE WORKED WITH -->
+      <section class="companies-section" id="companies" aria-label="Companies Worked With">
+        <div class="site-container">
+          <!-- Dynamically populated by js/home.js -->
+          <div id="companies-container" class="companies-wrapper"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: ABOUT ME -->
+      <section class="about-section" id="about" aria-label="About Himanshu">
+        <div class="site-container">
+          <div class="about-section__watermark watermark-text" aria-hidden="true">
+            ABOUT ME
+          </div>
+          <!-- Dynamically populated by js/home.js -->
+          <div id="about-container" class="about-grid"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============================================================
+         SHARED FOOTER CONTAINER (Injected by js/main.js)
+         ============================================================ -->
+    <div id="shared-footer"></div>
+
+    <!-- Scroll to Top Button (Bottom Right) -->
+    <button type="button" class="scroll-to-top-btn" id="scroll-to-top-btn" aria-label="Scroll to top" title="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Pinned GSAP + ScrollTrigger Libraries (Free & CDN loaded) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Modular Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/cat.js"></script>
+  <script src="js/home.js"></script>
+
+</body>
+</html>
