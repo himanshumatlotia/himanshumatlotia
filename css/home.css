@@ -1,0 +1,598 @@
+/* ============================================================
+   HIMANSHU MATLOTIA — HOME PAGE STYLESHEET
+   Hero Section, Selected Work, Companies, About Me
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. HERO SECTION
+   ------------------------------------------------------------ */
+.hero-section {
+  padding: clamp(28px, 4.5vw, 60px) clamp(16px, 3vw, 32px) 0;
+  position: relative;
+  z-index: 50; /* Stacking context higher than main content so hanging cat is fully visible */
+}
+
+.hero-section .site-container {
+  width: min(100% - 32px, 1260px);
+}
+
+@media (min-width: 768px) {
+  .hero-section .site-container {
+    width: min(100% - 48px, 1260px);
+  }
+}
+
+#main-content {
+  position: relative;
+  z-index: 1; /* Sits below hero section so hanging cat floats on top of white canvas */
+}
+
+.hero-card {
+  position: relative;
+  background-color: var(--color-blue);
+  border-radius: var(--radius-card);
+  padding: clamp(32px, 4.2vw, 48px) clamp(20px, 3.8vw, 44px) clamp(44px, 5.5vw, 68px);
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(55, 29, 235, 0.28);
+  overflow: visible; /* CRITICAL: Allows black cat to hang over the bottom edge */
+}
+
+/* Subtle ambient spotlight halo behind dots */
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle 240px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 50%, transparent 80%);
+  pointer-events: none;
+  opacity: var(--dot-glow-opacity, 0);
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+/* Dotted Grid Pattern Base Overlay (Increased Base Visibility) */
+.hero-card__pattern {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url('../assets/dot-pattern.svg');
+  background-repeat: repeat;
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Interactive Cursor Spotlight Glow on White Dots */
+.hero-card__pattern-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url('../assets/dot-pattern-bright.svg');
+  background-repeat: repeat;
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: var(--dot-glow-opacity, 0);
+  transition: opacity 0.35s ease;
+  -webkit-mask-image: radial-gradient(circle 200px at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+  mask-image: radial-gradient(circle 200px at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+  z-index: 2;
+}
+
+/* Hero Top Navigation - Subheading tier (24px) */
+.hero-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(16px, 2vw, 28px);
+  position: relative;
+  z-index: 5;
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+
+.hero-nav__link {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 24px); /* Subheading tier = 24px */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero-nav__link:hover {
+  color: var(--color-lime);
+  transform: translateY(-2px);
+}
+
+/* Center Role Badge ("UX/UI DESIGNER" with Sitting White Cat) - H2 Primary Heading tier */
+.hero-badge-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+  z-index: 5;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 14px);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 40px); /* Primary Headings (H2) = 40px */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-badge__label {
+  color: var(--color-white);
+  font-weight: 400;
+}
+
+/* Green Sticker tilted as if the sitting cat is weighing it down */
+.hero-badge__tag {
+  background-color: var(--color-lime);
+  color: var(--color-dark);
+  padding: 4px 16px 3px;
+  border-radius: 8px;
+  font-weight: 400;
+  transform: rotate(-3.5deg); /* Tilted by the sitting cat! */
+  transform-origin: left center;
+  display: inline-block;
+  box-shadow: 2.5px 3px 0px rgba(0, 0, 0, 0.28);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-badge__tag:hover {
+  transform: rotate(-5.5deg) scale(1.04);
+}
+
+/* Sitting White Cat Perched on top of DESIGNER */
+.hero-badge__cat {
+  position: absolute;
+  top: clamp(-46px, -3.2vw, -40px);
+  right: 8px;
+  width: clamp(46px, 3.8vw, 54px);
+  height: auto;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+  transform-origin: center bottom;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-badge__cat img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.22));
+}
+
+.hero-badge__tag:hover .hero-badge__cat {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Giant Main Headline */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 7.3vw, 105px); /* Giant title = 105px */
+  line-height: 0.94;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  z-index: 5;
+  user-select: none;
+}
+
+/* ------------------------------------------------------------
+   HANGING BLACK CAT (CLINGING TO HERO BOTTOM EDGE)
+   ------------------------------------------------------------ */
+.hero-hanging-cat {
+  position: absolute;
+  right: clamp(24px, 5.5vw, 68px);
+  top: calc(100% - 44px); /* Paws hook directly over the bottom blue edge */
+  width: clamp(75px, 9vw, 115px);
+  z-index: 100; /* Stacks completely above main section and white background */
+  cursor: pointer;
+  transform-origin: 50% 28px; /* Hangs and pivots naturally from the paws */
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: filter var(--transition-fast);
+}
+
+.hero-hanging-cat img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
+  transition: transform 0.15s ease;
+}
+
+.hero-hanging-cat:hover {
+  filter: drop-shadow(0 20px 36px rgba(55, 29, 235, 0.5));
+}
+
+.hero-hanging-cat:active {
+  cursor: grabbing;
+}
+
+/* Mobile Optimizations for Hero */
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 24px 12px 0;
+  }
+
+  .hero-card {
+    padding: 38px 18px 52px;
+    border-radius: 24px;
+  }
+
+  .hero-nav {
+    display: none; /* On mobile, clean minimal header matching mobile screenshot */
+  }
+
+  .hero-title {
+    font-size: clamp(1.65rem, 7.8vw, 2.6rem);
+    letter-spacing: 0.01em;
+  }
+
+  .hero-hanging-cat {
+    display: block; /* Visible across mobile too so user can always see and play with cat! */
+    width: clamp(52px, 14vw, 72px);
+    right: 18px;
+    top: calc(100% - 30px);
+    transform-origin: 50% 18px;
+  }
+}
+
+/* ------------------------------------------------------------
+   2. SELECTED WORK (CASE STUDIES) SECTION
+   ------------------------------------------------------------ */
+.case-studies-section {
+  position: relative;
+  margin-top: clamp(32px, 5vw, 64px);
+  padding: clamp(80px, 11vw, 140px) 0 clamp(48px, 7vw, 90px);
+  background-color: var(--color-white);
+  overflow: visible;
+}
+
+/* Watermark Title - Positioned on Top Right matching reference screenshot */
+.case-studies__watermark {
+  position: absolute;
+  top: clamp(20px, 3.5vw, 48px);
+  right: clamp(16px, 3.5vw, 50px);
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7.3vw, 105px); /* Giant title = 105px */
+  color: #E6E6EE; /* Crisp, readable light gray matching reference screenshot */
+  text-align: left; /* Left-aligned matching reference image */
+  line-height: 0.86;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .case-studies__watermark {
+    font-size: clamp(2.8rem, 12vw, 4.2rem);
+    top: 14px;
+    right: 12px;
+  }
+}
+
+.case-studies__grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(70px, 10vw, 130px);
+  position: relative;
+  z-index: 5;
+}
+
+/* Project Item Row */
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(20px, 3.5vw, 44px);
+}
+
+@media (min-width: 768px) {
+  .project-item {
+    grid-template-columns: minmax(260px, 1.25fr) auto;
+    max-width: clamp(520px, 62%, 720px);
+  }
+
+  /* Staggered diagonal layout matching reference image:
+     #01 sits on the top-left, leaving top-right open for CASE STUDIES.
+     #02 sits on the bottom-right, below CASE STUDIES. */
+  .project-item:first-child,
+  .project-item:nth-child(odd) {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .project-item:nth-child(2),
+  .project-item:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.project-item__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+@media (max-width: 767px) {
+  .project-item__info {
+    align-items: flex-start;
+  }
+}
+
+.project-item__number {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.8vw, 68px);
+  line-height: 1;
+  color: var(--color-dark);
+}
+
+.project-item__title {
+  font-family: var(--font-body);
+  font-size: clamp(22px, 2.8vw, 40px); /* H2 = 40px */
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.project-item__desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.project-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* Phone Mockup Frame */
+.project-item__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.phone-mockup-frame {
+  position: relative;
+  left: -8px;
+  max-width: clamp(140px, 15vw, 195px);
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), filter var(--transition-smooth);
+  will-change: transform;
+}
+
+.phone-mockup-frame--tilt-left {
+  transform: rotate(-6deg);
+}
+
+.phone-mockup-frame--tilt-right {
+  transform: rotate(6deg);
+}
+
+.project-item[data-project="02"] .phone-mockup-frame {
+  max-width: clamp(230px, 24vw, 330px);
+}
+
+/* Straighten phone mockup on card hover */
+.project-item:hover .phone-mockup-frame,
+.phone-mockup-frame:hover {
+  transform: rotate(0deg);
+}
+
+.phone-mockup-frame img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 38px rgba(0, 0, 0, 0.16));
+  transition: filter var(--transition-smooth);
+}
+
+.project-item:hover .phone-mockup-frame img {
+  filter: drop-shadow(0 28px 48px rgba(55, 29, 235, 0.22));
+}
+
+@media (max-width: 767px) {
+  .phone-mockup-frame {
+    left: 0;
+  }
+  .phone-mockup-frame--tilt-left,
+  .phone-mockup-frame--tilt-right {
+    transform: rotate(0deg);
+  }
+}
+
+/* ------------------------------------------------------------
+   3. COMPANIES WORKED WITH SECTION
+   ------------------------------------------------------------ */
+.companies-section {
+  padding: clamp(36px, 5vw, 60px) 0;
+  border-top: 1.5px dotted var(--color-border-dotted);
+  border-bottom: 1.5px dotted var(--color-border-dotted);
+  margin: clamp(40px, 6vw, 70px) 0;
+  background-color: var(--color-white);
+}
+
+.companies-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .companies-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.companies-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 24px); /* Subheading = 24px */
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.companies-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: var(--color-dark);
+  transition: transform var(--transition-fast);
+}
+
+.company-badge:hover {
+  transform: translateY(-2px);
+}
+
+.company-badge__icon {
+  width: clamp(48px, 4.5vw, 60px);
+  height: clamp(48px, 4.5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.company-badge__icon img,
+.company-badge__icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ------------------------------------------------------------
+   4. ABOUT ME SECTION
+   ------------------------------------------------------------ */
+.about-section {
+  position: relative;
+  padding: clamp(60px, 8vw, 110px) 0 clamp(40px, 6vw, 70px);
+  background-color: var(--color-white);
+}
+
+.about-section__watermark {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
+  color: #D4D4E2; /* Crisp, readable, subtle gray matching CASE STUDIES */
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+  user-select: none;
+  text-align: left;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .about-section__watermark {
+    font-size: clamp(2rem, 8.5vw, 3rem);
+    margin-bottom: 14px;
+  }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 60px;
+  }
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-heading {
+  font-family: var(--font-body);
+  font-size: clamp(22px, 2.8vw, 40px); /* H2 = 40px */
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+.about-bio {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.about-photo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Purple Scalloped Frame around Himanshu's portrait */
+.scallop-avatar {
+  position: relative;
+  width: clamp(160px, 20vw, 220px);
+  transition: transform var(--transition-spring), filter var(--transition-smooth);
+}
+
+.scallop-avatar img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 32px rgba(55, 29, 235, 0.28));
+  border-radius: 12px;
+}
+
+.scallop-avatar:hover {
+  transform: translateY(-6px) scale(1.04);
+  filter: drop-shadow(0 24px 44px rgba(55, 29, 235, 0.38));
+}
