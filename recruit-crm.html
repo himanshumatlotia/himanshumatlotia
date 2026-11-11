@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recruit CRM Company Page Redesign — Himanshu Matlotia</title>
+  
+  <meta name="description" content="Redesigning the Company Page in Recruit CRM to improve usability, reduce visual clutter, and enable recruiters to manage jobs, tasks, and candidates more efficiently. Product design case study by Himanshu Matlotia.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+
+  <!-- Google Fonts: Anton + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP Core & ScrollTrigger (Free CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <div class="site-wrapper">
+    
+    <!-- Top Back Navigation -->
+    <header class="case-study-nav-wrapper">
+      <div class="site-container">
+        <nav class="case-study-nav" aria-label="Case Study Navigation">
+          <a href="../index.html#work" class="case-study-nav__back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M19 12H5M12 19l-7-7 7-7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <span>Back to Work</span>
+          </a>
+          <div class="case-study-nav__links">
+            <a href="../index.html" class="case-study-nav__link">Home</a>
+            <a href="../index.html#work" class="case-study-nav__link">Work</a>
+            <a href="../index.html#contact" class="case-study-nav__link">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      
+      <!-- 1. HERO SECTION -->
+      <section class="cs-hero">
+        <div class="site-container">
+          <span class="cs-hero__tag">B2B SaaS Case Study • Product Design</span>
+          <h1 class="cs-hero__title">Recruit CRM Company Page Redesign</h1>
+          <p class="cs-hero__subtitle">
+            To redesign the Company Page in Recruit CRM to improve usability, reduce visual clutter, and enable recruiters to manage jobs, tasks, and candidates with maximum efficiency and clarity.
+          </p>
+
+          <!-- Role / Timeline / Tools Metadata Grid -->
+          <div class="cs-hero__metadata-grid">
+            <div class="cs-meta-item">
+              <span class="cs-meta-label">My Role</span>
+              <span class="cs-meta-val">Lead Product Designer</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="cs-meta-label">Discipline</span>
+              <span class="cs-meta-val">B2B UX &amp; Workflow Hierarchy</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="cs-meta-label">Platform</span>
+              <span class="cs-meta-val">Web SaaS Platform</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="cs-meta-label">Format</span>
+              <span class="cs-meta-val">15-Slide Interactive Presentation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. INTERACTIVE PRESENTATION DECK VIEWER -->
+      <section class="site-container">
+        <div class="cs-deck-wrapper">
+          
+          <!-- Deck Top Controls Header -->
+          <div class="cs-deck-header">
+            <div>
+              <h2 class="cs-deck-heading">Presentation Deck (15 Slides)</h2>
+              <span class="cs-deck-keyboard-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M8 12h.001M12 12h.001M16 12h.001M18 16H6"></path></svg>
+                Navigate with <kbd class="cs-deck-kbd">&larr;</kbd> <kbd class="cs-deck-kbd">&rarr;</kbd> arrow keys or click the side buttons
+              </span>
+            </div>
+            <div class="cs-deck-controls">
+              <button type="button" class="cs-deck-btn" id="prev-slide-btn" aria-label="Previous Slide">&larr; Prev</button>
+              <span class="cs-deck-counter" id="slide-counter" aria-live="polite">Slide 1 of 15</span>
+              <button type="button" class="cs-deck-btn" id="next-slide-btn" aria-label="Next Slide">Next &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Featured Large Slide View with Natural Left & Right Navigation Buttons -->
+          <div class="cs-featured-slide" id="featured-slide-container">
+            
+            <!-- Left Side Floating Navigation Button -->
+            <button type="button" class="cs-slide-side-btn cs-slide-side-btn--prev" id="side-prev-btn" aria-label="Previous Slide (Left)" title="Previous Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <!-- Main Slide Image -->
+            <img id="featured-slide-img" src="../assets/case-study-recruit-crm/page_1.png" alt="Recruit CRM Slide 1" width="1600" height="900" title="Click to view fullscreen in high resolution" />
+
+            <!-- Right Side Floating Navigation Button -->
+            <button type="button" class="cs-slide-side-btn cs-slide-side-btn--next" id="side-next-btn" aria-label="Next Slide (Right)" title="Next Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- Thumbnail Ribbon (15 Slides) -->
+          <div class="cs-deck-thumbs" id="thumbs-ribbon" role="tablist" aria-label="Slide thumbnails">
+            <button class="cs-deck-thumb active" data-slide="1" role="tab" aria-selected="true" aria-label="Go to Slide 1">
+              <img src="../assets/case-study-recruit-crm/page_1.png" alt="Slide 1 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="2" role="tab" aria-selected="false" aria-label="Go to Slide 2">
+              <img src="../assets/case-study-recruit-crm/page_2.png" alt="Slide 2 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="3" role="tab" aria-selected="false" aria-label="Go to Slide 3">
+              <img src="../assets/case-study-recruit-crm/page_3.png" alt="Slide 3 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="4" role="tab" aria-selected="false" aria-label="Go to Slide 4">
+              <img src="../assets/case-study-recruit-crm/page_4.png" alt="Slide 4 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="5" role="tab" aria-selected="false" aria-label="Go to Slide 5">
+              <img src="../assets/case-study-recruit-crm/page_5.png" alt="Slide 5 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="6" role="tab" aria-selected="false" aria-label="Go to Slide 6">
+              <img src="../assets/case-study-recruit-crm/page_6.png" alt="Slide 6 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="7" role="tab" aria-selected="false" aria-label="Go to Slide 7">
+              <img src="../assets/case-study-recruit-crm/page_7.png" alt="Slide 7 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="8" role="tab" aria-selected="false" aria-label="Go to Slide 8">
+              <img src="../assets/case-study-recruit-crm/page_8.png" alt="Slide 8 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="9" role="tab" aria-selected="false" aria-label="Go to Slide 9">
+              <img src="../assets/case-study-recruit-crm/page_9.png" alt="Slide 9 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="10" role="tab" aria-selected="false" aria-label="Go to Slide 10">
+              <img src="../assets/case-study-recruit-crm/page_10.png" alt="Slide 10 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="11" role="tab" aria-selected="false" aria-label="Go to Slide 11">
+              <img src="../assets/case-study-recruit-crm/page_11.png" alt="Slide 11 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="12" role="tab" aria-selected="false" aria-label="Go to Slide 12">
+              <img src="../assets/case-study-recruit-crm/page_12.png" alt="Slide 12 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="13" role="tab" aria-selected="false" aria-label="Go to Slide 13">
+              <img src="../assets/case-study-recruit-crm/page_13.png" alt="Slide 13 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="14" role="tab" aria-selected="false" aria-label="Go to Slide 14">
+              <img src="../assets/case-study-recruit-crm/page_14.png" alt="Slide 14 thumbnail" loading="lazy" />
+            </button>
+            <button class="cs-deck-thumb" data-slide="15" role="tab" aria-selected="false" aria-label="Go to Slide 15">
+              <img src="../assets/case-study-recruit-crm/page_15.png" alt="Slide 15 thumbnail" loading="lazy" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. INTERACTIVE BEFORE & AFTER WORKSPACE COMPARISON -->
+      <section class="site-container">
+        <div class="cs-before-after">
+          
+          <div class="cs-ba-header">
+            <div>
+              <h2 class="cs-ba-heading">Workspace UI: Before vs. After</h2>
+              <p style="font-family: var(--font-body); color: var(--color-text-muted); margin-top: 4px; font-size: 0.95rem;">
+                Toggle between the original interface and the redesign to see how cognitive load was drastically reduced.
+              </p>
+            </div>
+            
+            <div class="cs-ba-toggle-group" role="group" aria-label="Workspace View Mode">
+              <button type="button" class="cs-ba-toggle-btn active" id="btn-show-new" aria-pressed="true">
+                ✨ Redesign (New)
+              </button>
+              <button type="button" class="cs-ba-toggle-btn" id="btn-show-old" aria-pressed="false">
+                ⚠️ Previous (Old)
+              </button>
+            </div>
+          </div>
+
+          <!-- Comparison Display Frame -->
+          <div class="cs-ba-frame">
+            <span class="cs-ba-badge cs-ba-badge--new" id="ba-badge">New Redesign</span>
+            <img id="ba-screen-img" src="../assets/case-study-recruit-crm/screen-new.png" alt="Recruit CRM New Redesigned Workspace" width="1024" height="665" title="Click to view full resolution" />
+          </div>
+
+          <!-- 4 Core Pain Points Breakdown Cards -->
+          <div class="cs-ba-features-grid">
+            <div class="cs-ba-feature-card">
+              <span class="cs-ba-feature-num">01</span>
+              <h3 class="cs-ba-feature-title">Top Bar Hierarchy Reorganized</h3>
+              <p class="cs-ba-feature-desc">
+                Promoted core recruiter workflows by de-prioritizing generic marketing buttons ("Book a Demo"), styling "Upgrade to Premium" as a subtle gold crown icon, and making "+ Add New" globally prominent.
+              </p>
+            </div>
+
+            <div class="cs-ba-feature-card">
+              <span class="cs-ba-feature-num">02</span>
+              <h3 class="cs-ba-feature-title">Actionable Empty States</h3>
+              <p class="cs-ba-feature-desc">
+                Replaced passive "No activities associated with this record yet!" with a delightful visual and a direct, guided "Add Task" primary button so recruiters immediately know their next step.
+              </p>
+            </div>
+
+            <div class="cs-ba-feature-card">
+              <span class="cs-ba-feature-num">03</span>
+              <h3 class="cs-ba-feature-title">Collapsible About Company Section</h3>
+              <p class="cs-ba-feature-desc">
+                Tucked dozens of secondary and often-empty company fields into an accordion that stays neatly collapsed by default, saving massive vertical screen real-estate for active jobs and candidate pipelines.
+              </p>
+            </div>
+
+            <div class="cs-ba-feature-card">
+              <span class="cs-ba-feature-num">04</span>
+              <h3 class="cs-ba-feature-title">Action Button Grouping &amp; Positioning</h3>
+              <p class="cs-ba-feature-desc">
+                Moved "Add Job" and "View Assigned Candidates" down adjacent to the jobs table for clear contextual focus, and simplified verbose filter labels to clean, concise UI elements.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 4. PREVIOUS / NEXT PROJECT NAVIGATION -->
+      <section class="site-container">
+        <a href="paytm-group-wallet.html" class="cs-next-card">
+          <span class="cs-next-label">Previous Case Study</span>
+          <span class="cs-next-title">&larr; Paytm Group Wallet</span>
+        </a>
+      </section>
+
+    </main>
+
+    <!-- Shared Footer Container (Injected automatically via js/main.js) -->
+    <div id="shared-footer"></div>
+
+    <!-- Scroll to Top Button (Bottom Right) -->
+    <button type="button" class="scroll-to-top-btn" id="scroll-to-top-btn" aria-label="Scroll to top" title="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Lightbox Modal for Fullscreen Image Viewing -->
+  <div class="cs-lightbox" id="cs-lightbox" role="dialog" aria-modal="true" aria-label="Slide Fullscreen Preview">
+    <button type="button" class="cs-lightbox-close" id="lightbox-close" aria-label="Close Fullscreen View">&times;</button>
+    <img id="lightbox-img" src="" alt="Enlarged Case Study Slide" />
+  </div>
+
+  <!-- Main JavaScript Files -->
+  <script src="../js/main.js"></script>
+  <script src="../js/cat.js"></script>
+
+  <!-- Interactive Slide Deck & Before/After Logic -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ------------------------------------------------------------
+      // 1. SLIDE DECK VIEWER (15 Slides)
+      // ------------------------------------------------------------
+      const totalSlides = 15;
+      let currentSlide = 1;
+
+      const slideImg = document.getElementById('featured-slide-img');
+      const counterEl = document.getElementById('slide-counter');
+      const prevBtn = document.getElementById('prev-slide-btn');
+      const nextBtn = document.getElementById('next-slide-btn');
+      const sidePrevBtn = document.getElementById('side-prev-btn');
+      const sideNextBtn = document.getElementById('side-next-btn');
+      const thumbs = document.querySelectorAll('.cs-deck-thumb');
+
+      // Lightbox elements
+      const lightbox = document.getElementById('cs-lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      /**
+       * Switch to slide by index (1 to 15)
+       */
+      function goToSlide(slideNum) {
+        if (slideNum < 1) slideNum = totalSlides;
+        if (slideNum > totalSlides) slideNum = 1;
+        currentSlide = slideNum;
+
+        // Fade image transition
+        slideImg.style.opacity = '0.35';
+        setTimeout(() => {
+          slideImg.src = `../assets/case-study-recruit-crm/page_${currentSlide}.png`;
+          slideImg.alt = `Recruit CRM Case Study Slide ${currentSlide}`;
+          slideImg.style.opacity = '1';
+        }, 120);
+
+        // Update counter
+        if (counterEl) {
+          counterEl.textContent = `Slide ${currentSlide} of ${totalSlides}`;
+        }
+
+        // Update active thumbnail
+        thumbs.forEach(thumb => {
+          const num = parseInt(thumb.getAttribute('data-slide'), 10);
+          const isActive = num === currentSlide;
+          thumb.classList.toggle('active', isActive);
+          thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+
+          if (isActive) {
+            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+      }
+
+      // Prev / Next button listeners (Top controls)
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+      }
+
+      // Prev / Next button listeners (Side controls on left & right of slide)
+      if (sidePrevBtn) {
+        sidePrevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(currentSlide - 1);
+        });
+      }
+      if (sideNextBtn) {
+        sideNextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(currentSlide + 1);
+        });
+      }
+
+      // Thumbnail click listeners
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          const targetNum = parseInt(thumb.getAttribute('data-slide'), 10);
+          goToSlide(targetNum);
+        });
+      });
+
+      // Keyboard left / right arrow navigation
+      window.addEventListener('keydown', (e) => {
+        // If lightbox is open, ESC closes it
+        if (lightbox && lightbox.classList.contains('active')) {
+          if (e.key === 'Escape') {
+            closeLightbox();
+          } else if (e.key === 'ArrowLeft') {
+            goToSlide(currentSlide - 1);
+            lightboxImg.src = slideImg.src;
+          } else if (e.key === 'ArrowRight') {
+            goToSlide(currentSlide + 1);
+            lightboxImg.src = slideImg.src;
+          }
+          return;
+        }
+
+        if (e.key === 'ArrowLeft') {
+          goToSlide(currentSlide - 1);
+        } else if (e.key === 'ArrowRight') {
+          goToSlide(currentSlide + 1);
+        }
+      });
+
+      // Touch swipe support on slide
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const slideContainer = document.getElementById('featured-slide-container');
+      if (slideContainer) {
+        slideContainer.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slideContainer.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          const diff = touchEndX - touchStartX;
+          if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+              goToSlide(currentSlide - 1);
+            } else {
+              goToSlide(currentSlide + 1);
+            }
+          }
+        }, { passive: true });
+      }
+
+      // Lightbox Functions
+      function openLightbox(src, alt) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || 'Case Study Slide High Resolution';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Click on featured slide opens lightbox
+      if (slideImg) {
+        slideImg.addEventListener('click', () => {
+          openLightbox(slideImg.src, slideImg.alt);
+        });
+      }
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox || e.target === lightboxClose) {
+            closeLightbox();
+          }
+        });
+      }
+
+      // ------------------------------------------------------------
+      // 2. BEFORE & AFTER WORKSPACE TOGGLE
+      // ------------------------------------------------------------
+      const btnNew = document.getElementById('btn-show-new');
+      const btnOld = document.getElementById('btn-show-old');
+      const baImg = document.getElementById('ba-screen-img');
+      const baBadge = document.getElementById('ba-badge');
+
+      if (btnNew && btnOld && baImg && baBadge) {
+        btnNew.addEventListener('click', () => {
+          btnNew.classList.add('active');
+          btnNew.setAttribute('aria-pressed', 'true');
+          btnOld.classList.remove('active');
+          btnOld.setAttribute('aria-pressed', 'false');
+
+          baImg.style.opacity = '0.3';
+          setTimeout(() => {
+            baImg.src = '../assets/case-study-recruit-crm/screen-new.png';
+            baImg.alt = 'Recruit CRM New Redesigned Workspace';
+            baBadge.textContent = 'New Redesign';
+            baBadge.className = 'cs-ba-badge cs-ba-badge--new';
+            baImg.style.opacity = '1';
+          }, 150);
+        });
+
+        btnOld.addEventListener('click', () => {
+          btnOld.classList.add('active');
+          btnOld.setAttribute('aria-pressed', 'true');
+          btnNew.classList.remove('active');
+          btnNew.setAttribute('aria-pressed', 'false');
+
+          baImg.style.opacity = '0.3';
+          setTimeout(() => {
+            baImg.src = '../assets/case-study-recruit-crm/screen-old.jpg';
+            baImg.alt = 'Recruit CRM Previous Original Workspace';
+            baBadge.textContent = 'Previous Design';
+            baBadge.className = 'cs-ba-badge cs-ba-badge--old';
+            baImg.style.opacity = '1';
+          }, 150);
+        });
+
+        baImg.addEventListener('click', () => {
+          openLightbox(baImg.src, baImg.alt);
+        });
+      }
+
+    })();
+  </script>
+</body>
+</html>

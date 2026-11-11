@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 95" width="70" height="95" fill="none">
+  <!-- Cat Shadow -->
+  <ellipse cx="35" cy="90" rx="18" ry="4" fill="rgba(0,0,0,0.18)" class="cat-shadow" />
+  
+  <g class="cat-body-group">
+    <!-- Tail (animated wag on hover / walk) -->
+    <path class="cat-tail" d="M 46 72 C 55 70, 62 60, 58 52 C 55 46, 48 50, 50 56 C 52 61, 46 66, 40 70" stroke="#000000" stroke-width="3" stroke-linecap="round" fill="none" />
+    
+    <!-- Body & Legs -->
+    <path d="M 23 48 C 21 58, 20 68, 20 84 C 20 87, 26 87, 27 84 C 29 76, 30 72, 33 72 C 36 72, 38 76, 40 84 C 41 87, 47 87, 47 84 C 47 68, 46 58, 44 48 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.6" stroke-linejoin="round" />
+    
+    <!-- Head with pointy ears -->
+    <path d="M 17 46 C 14 36, 15 26, 17 18 C 18 14, 23 18, 28 22 C 32 21, 38 21, 42 22 C 47 18, 52 14, 53 18 C 55 26, 56 36, 53 46 C 50 54, 20 54, 17 46 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.6" stroke-linejoin="round" />
+    
+    <!-- Left Ear Inner -->
+    <path d="M 20 21 L 23 27 L 18 27 Z" fill="#FFD1DC" opacity="0.6" />
+    <!-- Right Ear Inner -->
+    <path d="M 50 21 L 52 27 L 47 27 Z" fill="#FFD1DC" opacity="0.6" />
+
+    <!-- Left Eye (Huge cute black pupil with white shine) -->
+    <g class="cat-eye cat-eye--left">
+      <ellipse cx="27" cy="35" rx="7.5" ry="9" fill="#000000" />
+      <circle cx="25" cy="32.5" r="2.4" fill="#FFFFFF" />
+      <circle cx="28.5" cy="38" r="1.1" fill="#FFFFFF" />
+    </g>
+    
+    <!-- Right Eye (Huge cute black pupil with white shine) -->
+    <g class="cat-eye cat-eye--right">
+      <ellipse cx="43" cy="35" rx="7.5" ry="9" fill="#000000" />
+      <circle cx="41" cy="32.5" r="2.4" fill="#FFFFFF" />
+      <circle cx="44.5" cy="38" r="1.1" fill="#FFFFFF" />
+    </g>
+
+    <!-- Blinking Eyelids (Hidden by default, shown during blink/idle) -->
+    <g class="cat-eyes-closed" style="opacity: 0;">
+      <path d="M 20 36 Q 27 41 34 36" stroke="#000000" stroke-width="2.6" stroke-linecap="round" fill="none" />
+      <path d="M 36 36 Q 43 41 50 36" stroke="#000000" stroke-width="2.6" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Cute Mouth & Whiskers -->
+    <path d="M 32 44 Q 35 46 38 44" stroke="#000000" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <circle cx="35" cy="42" r="1" fill="#000000" />
+    
+    <!-- Left Whiskers -->
+    <line x1="14" y1="36" x2="6" y2="34" stroke="#000000" stroke-width="1.4" stroke-linecap="round" />
+    <line x1="14" y1="40" x2="7" y2="41" stroke="#000000" stroke-width="1.4" stroke-linecap="round" />
+
+    <!-- Right Whiskers -->
+    <line x1="56" y1="36" x2="64" y2="34" stroke="#000000" stroke-width="1.4" stroke-linecap="round" />
+    <line x1="56" y1="40" x2="63" y2="41" stroke="#000000" stroke-width="1.4" stroke-linecap="round" />
+  </g>
+</svg>

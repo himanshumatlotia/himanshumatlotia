@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 44" fill="none">
+  <!-- Stylized Cyan/Blue Wave Glyphs -->
+  <g transform="translate(0, 10)">
+    <!-- 'D' Loop -->
+    <path d="M 5 20 C 5 20, 2 12, 10 12 C 18 12, 16 20, 16 20 L 16 6" stroke="#00A3E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="16" cy="1" r="2" fill="#00A3E0" />
+    <!-- 'i' dot & stem -->
+    <path d="M 23 20 L 23 12" stroke="#00A3E0" stroke-width="3" stroke-linecap="round" />
+    <circle cx="23" cy="7" r="1.8" fill="#00A3E0" />
+    <!-- 'v' wave -->
+    <path d="M 30 12 L 35 20 L 40 12" stroke="#00A3E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- 'E' wave -->
+    <path d="M 45 12 L 53 12 M 45 16 L 51 16 M 45 20 L 53 20 M 45 12 L 45 20" stroke="#00A3E0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Typography -->
+  <text x="68" y="27" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#18181B" letter-spacing="0.3px">DIVINE LAB , IIT Delhi</text>
+</svg>

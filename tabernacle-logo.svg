@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 44" fill="none">
+  <!-- Blue Circular Mark -->
+  <circle cx="22" cy="22" r="20" fill="#2563EB" />
+  <!-- Stylized Tabernacle Arch / Portal -->
+  <path d="M 12 28 L 15 17 C 15 15.5 16.5 14.5 18 14.5 L 26 14.5 C 27.5 14.5 29 15.5 29 17 L 32 28 Z" fill="#FFFFFF" />
+  <!-- Center cutout / doorway -->
+  <path d="M 19 28 L 19 23 C 19 21.5 20 20.5 21 20.5 L 23 20.5 C 24 20.5 25 21.5 25 23 L 25 28 Z" fill="#2563EB" />
+  <!-- Horizontal slit -->
+  <rect x="17" y="17.5" width="10" height="2" rx="1" fill="#2563EB" />
+
+  <!-- Typography -->
+  <text x="54" y="27" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#18181B" letter-spacing="-0.2px">Tabernacle Technologies</text>
+</svg>
