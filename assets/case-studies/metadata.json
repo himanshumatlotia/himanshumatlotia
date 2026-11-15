@@ -1,0 +1,195 @@
+{
+  "paytm-group-wallet": [
+    {
+      "page": 1,
+      "file": "01.webp",
+      "width": 1600,
+      "height": 1065,
+      "bytes": 74866
+    },
+    {
+      "page": 2,
+      "file": "02.webp",
+      "width": 1600,
+      "height": 1533,
+      "bytes": 102500
+    },
+    {
+      "page": 3,
+      "file": "03.webp",
+      "width": 1600,
+      "height": 1011,
+      "bytes": 59788
+    },
+    {
+      "page": 4,
+      "file": "04.webp",
+      "width": 1600,
+      "height": 2256,
+      "bytes": 133704
+    },
+    {
+      "page": 5,
+      "file": "05.webp",
+      "width": 1600,
+      "height": 1332,
+      "bytes": 74964
+    },
+    {
+      "page": 6,
+      "file": "06.webp",
+      "width": 1600,
+      "height": 1332,
+      "bytes": 84220
+    },
+    {
+      "page": 7,
+      "file": "07.webp",
+      "width": 1600,
+      "height": 1005,
+      "bytes": 51220
+    },
+    {
+      "page": 8,
+      "file": "08.webp",
+      "width": 1600,
+      "height": 1005,
+      "bytes": 45940
+    },
+    {
+      "page": 9,
+      "file": "09.webp",
+      "width": 1600,
+      "height": 348,
+      "bytes": 17328
+    },
+    {
+      "page": 10,
+      "file": "10.webp",
+      "width": 1600,
+      "height": 2825,
+      "bytes": 99834
+    },
+    {
+      "page": 11,
+      "file": "11.webp",
+      "width": 1600,
+      "height": 933,
+      "bytes": 33486
+    },
+    {
+      "page": 12,
+      "file": "12.webp",
+      "width": 1600,
+      "height": 1217,
+      "bytes": 46320
+    }
+  ],
+  "recruit-crm": [
+    {
+      "page": 1,
+      "file": "01.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 24164
+    },
+    {
+      "page": 2,
+      "file": "02.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 38064
+    },
+    {
+      "page": 3,
+      "file": "03.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 35538
+    },
+    {
+      "page": 4,
+      "file": "04.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 42560
+    },
+    {
+      "page": 5,
+      "file": "05.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 51320
+    },
+    {
+      "page": 6,
+      "file": "06.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 47712
+    },
+    {
+      "page": 7,
+      "file": "07.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 46074
+    },
+    {
+      "page": 8,
+      "file": "08.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 30884
+    },
+    {
+      "page": 9,
+      "file": "09.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 49182
+    },
+    {
+      "page": 10,
+      "file": "10.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 36982
+    },
+    {
+      "page": 11,
+      "file": "11.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 34256
+    },
+    {
+      "page": 12,
+      "file": "12.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 30708
+    },
+    {
+      "page": 13,
+      "file": "13.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 48670
+    },
+    {
+      "page": 14,
+      "file": "14.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 30338
+    },
+    {
+      "page": 15,
+      "file": "15.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 37000
+    }
+  ]
+}

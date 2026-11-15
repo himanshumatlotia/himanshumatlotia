@@ -7,7 +7,14 @@
    1. CASE STUDY TOP NAVIGATION
    ------------------------------------------------------------ */
 .case-study-nav-wrapper {
-  padding: clamp(16px, 3vw, 32px) clamp(16px, 3vw, 32px) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 14px 0 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .case-study-nav {
@@ -80,6 +87,30 @@
 
 .case-study-nav__btn:hover {
   transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .case-study-nav-wrapper {
+    padding: 10px 0;
+  }
+  .case-study-nav {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  .case-study-nav__back {
+    font-size: 0.84rem;
+    gap: 5px;
+  }
+  .case-study-nav__back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .case-study-nav__links {
+    gap: 8px;
+  }
+  .case-study-nav__link {
+    font-size: 0.8rem;
+  }
 }
 
 /* ------------------------------------------------------------
@@ -914,4 +945,39 @@
   line-height: 1.55;
   margin: 0;
 }
+
+/* ============================================================
+   VERTICAL SCROLLING CASE STUDY STYLES (CLEAN STACK)
+   ============================================================ */
+
+.cs-stack-container {
+  width: min(100% - 32px, 1100px);
+  margin: 28px auto 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .cs-stack-container {
+    width: 100%;
+    padding: 0 16px;
+    margin: 16px auto 36px;
+    gap: 4px;
+  }
+}
+
+.cs-stack-item {
+  width: 100%;
+  display: block;
+  background-color: transparent;
+}
+
+.cs-stack-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 

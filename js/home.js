@@ -116,23 +116,21 @@
 
     container.innerHTML = `
       <div class="about-content">
-        <h2 class="about-heading">UX/UI Designer with a passion for conversion &amp; playfulness.</h2>
+        <h2 class="about-heading">I turn confusing flows into apps people actually enjoy using.</h2>
         <p class="about-bio">
-          Hey! I'm <strong>Himanshu Matlotia</strong>, a product &amp; UX/UI designer crafting high-impact digital experiences. 
-          I bridge user empathy with rigorous business metrics—turning complex checkout funnels, delivery logistics, 
-          and enterprise workflows into simple, delightful mobile and web apps.
+          Hey, I’m Himanshu, a UI/UX designer based in Delhi. I’ve shipped three live products across fintech, spiritual lifestyle and enterprise operations, from a gamified devotion app to a donation payments app to an internal tool for a transport corporation. I start with how people actually behave, then design the simplest path to what they came to do.
         </p>
         <div class="about-tags">
-          <span class="tag-chip">Mobile App UX</span>
-          <span class="tag-chip">AOV Optimization</span>
+          <span class="tag-chip">UX Research</span>
+          <span class="tag-chip">UI Design</span>
+          <span class="tag-chip">Prototyping</span>
           <span class="tag-chip">Design Systems</span>
-          <span class="tag-chip">Figma to Code</span>
         </div>
       </div>
 
       <div class="about-photo-wrapper">
         <div class="scallop-avatar">
-          <img src="assets/himanshu-avatar-clean.png" alt="Himanshu Matlotia portrait with purple scalloped frame" width="220" height="260" loading="lazy" />
+          <img src="assets/himanshu-avatar.png" alt="Himanshu Matlotia portrait with purple scalloped frame" width="382" height="478" loading="lazy" />
         </div>
       </div>
     `;
@@ -291,6 +289,10 @@
       duration: 0.9,
       ease: 'power3.out'
     });
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
   }
 
   /**
