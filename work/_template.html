@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Study Template — Himanshu Matlotia</title>
+  <title>[Case Study Title] — UX/UI Case Study — Himanshu Matlotia</title>
   
-  <meta name="description" content="Detailed UX/UI Case Study by Himanshu Matlotia">
+  <meta name="description" content="[Case Study Subtitle / Overview] — Product design case study by Himanshu Matlotia.">
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
 
-  <!-- Google Fonts: Anton + Plus Jakarta Sans -->
+  <!-- Google Fonts: Anton (Display) + Plus Jakarta Sans (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP Core & ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/base.css">
@@ -23,19 +27,20 @@
 
   <div class="site-wrapper">
     
-    <!-- Top Back Navigation -->
+    <!-- Top Back Navigation (Signature Blue Card) -->
     <header class="case-study-nav-wrapper">
       <div class="site-container">
         <nav class="case-study-nav" aria-label="Case Study Navigation">
           <a href="../index.html#work" class="case-study-nav__back">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M19 12H5M12 19l-7-7 7-7"></path>
+              <path d="M19 12H5M12 19l-7-7 7-7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             <span>Back to Work</span>
           </a>
           <div class="case-study-nav__links">
             <a href="../index.html" class="case-study-nav__link">Home</a>
-            <a href="https://drive.google.com/file/d/1Zidk40xp9YBlxyGMCen4q8tyqnFkjrZ0/view?usp=sharing" class="case-study-nav__link" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="../index.html#work" class="case-study-nav__link">Work</a>
+            <a href="../index.html#contact" class="case-study-nav__link">Contact</a>
           </div>
         </nav>
       </div>
@@ -43,129 +48,66 @@
 
     <main id="main-content">
       
-      <!-- 1. HERO SECTION -->
+      <!-- 1. Hero Intro -->
       <section class="cs-hero">
         <div class="site-container">
-          <span class="cs-hero__tag">Mobile App Case Study</span>
-          <h1 class="cs-hero__title">Optimizing AOV for Zepto Quick-Commerce</h1>
+          <span class="cs-hero__tag">[Discipline / Category Tag]</span>
+          <h1 class="cs-hero__title">[Main Case Study Headline]</h1>
+          <p class="cs-hero__subtitle">[Brief problem overview and business context]</p>
 
-          <!-- Role / Timeline / Tools Metadata Grid -->
           <div class="cs-hero__metadata-grid">
             <div class="cs-meta-item">
-              <span class="cs-meta-label">My Role</span>
+              <span class="cs-meta-label">Role</span>
               <span class="cs-meta-val">Lead Product Designer</span>
             </div>
             <div class="cs-meta-item">
-              <span class="cs-meta-label">Timeline</span>
-              <span class="cs-meta-val">8 Weeks (Q3 2024)</span>
+              <span class="cs-meta-label">Discipline</span>
+              <span class="cs-meta-val">UX &amp; Interaction Design</span>
             </div>
             <div class="cs-meta-item">
-              <span class="cs-meta-label">Tools</span>
-              <span class="cs-meta-val">Figma, Miro, ProtoPie</span>
+              <span class="cs-meta-label">Platform</span>
+              <span class="cs-meta-val">Web / Mobile</span>
             </div>
             <div class="cs-meta-item">
-              <span class="cs-meta-label">Platforms</span>
-              <span class="cs-meta-val">iOS &amp; Android Apps</span>
+              <span class="cs-meta-label">Scope</span>
+              <span class="cs-meta-val">End-to-End Redesign</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 2. OVERVIEW -->
-      <section class="cs-section">
-        <div class="site-container">
-          <h2 class="cs-section__heading">01. Overview</h2>
-          <p class="cs-section__body">
-            Zepto is one of India's fastest-growing quick-commerce platforms delivering groceries in 10 minutes. 
-            While active users and order frequency grew rapidly, the business faced margin compression from small basket sizes. 
-            This project focused on redesigning checkout, cart recommendations, and pre-purchase bundles to increase Average Order Value (AOV) 
-            without hurting conversion rates or delivery velocity.
-          </p>
-        </div>
+      <!-- 2. Vertical Stack of Case Study Pages -->
+      <section class="cs-stack-container" id="case-study-stack" aria-label="Case Study Document Pages">
+        
+        <!-- Repeat for each page in order -->
+        <article class="cs-stack-item">
+          <img src="../assets/case-studies/[case-name]/01.webp" alt="Page 1 description" width="1600" height="900" loading="eager" fetchpriority="high" />
+        </article>
+
+        <article class="cs-stack-item">
+          <img src="../assets/case-studies/[case-name]/02.webp" alt="Page 2 description" width="1600" height="900" loading="eager" />
+        </article>
+
+        <article class="cs-stack-item">
+          <img src="../assets/case-studies/[case-name]/03.webp" alt="Page 3 description" width="1600" height="900" loading="lazy" />
+        </article>
+
       </section>
 
-      <!-- 3. PROBLEM STATEMENT -->
-      <section class="cs-section">
-        <div class="site-container">
-          <h2 class="cs-section__heading">02. The Problem</h2>
-          <p class="cs-section__body">
-            Users were ordering single high-demand items (e.g. milk, bananas) under delivery subsidies. 
-            Cross-sell banners on the cart page felt intrusive and triggered choice paralysis, causing an 11% cart abandonment rate. 
-            We needed frictionless contextual add-ons and intelligent basket builders.
-          </p>
-        </div>
-      </section>
-
-      <!-- 4. DESIGN PROCESS -->
-      <section class="cs-section">
-        <div class="site-container">
-          <h2 class="cs-section__heading">03. Design Process &amp; Wireframes</h2>
-          <p class="cs-section__body">
-            We mapped out customer purchase friction points through session recordings and user interviews. 
-            By categorizing complementary impulse buys (breakfast essentials, late-night snacks, household staples), 
-            we introduced 1-tap bundle additions and progress milestones toward free delivery perks.
-          </p>
-        </div>
-      </section>
-
-      <!-- 5. KEY SCREENS (IMAGE GRID) -->
-      <section class="cs-section">
-        <div class="site-container">
-          <h2 class="cs-section__heading">04. Key Screens</h2>
-          <div class="cs-screens-grid">
-            <div class="cs-screen-card">
-              <img src="../assets/zepto-phone-clean.png" alt="Cart Redesign Screen" loading="lazy" width="260" height="460" />
-            </div>
-            <div class="cs-screen-card">
-              <img src="../assets/delivery-phone-clean.png" alt="Bundle Additions Screen" loading="lazy" width="260" height="460" />
-            </div>
-            <div class="cs-screen-card">
-              <img src="../assets/zepto-phone-clean.png" alt="Smart Checkout Screen" loading="lazy" width="260" height="460" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. OUTCOME & METRICS -->
-      <section class="cs-section">
-        <div class="site-container">
-          <h2 class="cs-section__heading">05. Business Outcome</h2>
-          <p class="cs-section__body">
-            The redesigned funnel was rolled out across 12 tier-1 cities with significant lifts in basket economics:
-          </p>
-          <div class="cs-metrics-grid">
-            <div class="cs-metric-card">
-              <span class="cs-metric-num">+18%</span>
-              <span class="cs-metric-desc">Increase in Average Order Value (AOV)</span>
-            </div>
-            <div class="cs-metric-card">
-              <span class="cs-metric-num">3.2x</span>
-              <span class="cs-metric-desc">Adoption of 1-tap impulse bundles</span>
-            </div>
-            <div class="cs-metric-card">
-              <span class="cs-metric-num">-9%</span>
-              <span class="cs-metric-desc">Reduction in cart exit bounce rate</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 7. NEXT PROJECT LINK -->
-      <section class="cs-section">
-        <div class="site-container">
-          <a href="coming-soon.html" class="cs-next-card">
-            <span class="cs-next-label">Next Case Study</span>
-            <span class="cs-next-title">Shifts for Delivery Agents &amp; Pickers &rarr;</span>
-          </a>
-        </div>
+      <!-- 3. PREVIOUS / NEXT PROJECT NAVIGATION -->
+      <section class="site-container">
+        <a href="[next-case-study].html" class="cs-next-card">
+          <span class="cs-next-label">Next Case Study</span>
+          <span class="cs-next-title">[Next Case Study Title] &rarr;</span>
+        </a>
       </section>
 
     </main>
 
-    <!-- Shared Footer Container -->
+    <!-- Shared Footer Container (Injected automatically via js/main.js) -->
     <div id="shared-footer"></div>
 
-    <!-- Scroll to Top Button (Bottom Right) -->
+    <!-- Floating Scroll-To-Top Button -->
     <button type="button" class="scroll-to-top-btn" id="scroll-to-top-btn" aria-label="Scroll to top" title="Back to top">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -174,7 +116,8 @@
 
   </div>
 
-  <!-- Scripts -->
+  <!-- Main JavaScript Files -->
   <script src="../js/main.js"></script>
+  <script src="../js/cat.js"></script>
 </body>
 </html>
