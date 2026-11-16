@@ -24,7 +24,7 @@
           <div class="footer-actions-grid">
             
             <!-- RESUME -->
-            <a href="https://drive.google.com/file/d/1Zidk40xp9YBlxyGMCen4q8tyqnFkjrZ0/view?usp=sharing" class="footer-action-item" target="_blank" rel="noopener noreferrer" aria-label="View / Download Resume (Google Drive)">
+            <a href="${pathPrefix}assets/Himanshu-Matlotia-Resume.pdf" class="footer-action-item" target="_blank" rel="noopener noreferrer" aria-label="View / Download Resume (PDF)">
               <div class="footer-action-content">
                 <span class="footer-action-title">RESUME</span>
                 <span class="footer-action-subtitle">Download the PDF</span>
@@ -236,7 +236,7 @@
   function initAnalyticsTracking() {
     document.addEventListener('click', (e) => {
       // 1. Resume Clicks (Header nav & Footer action card)
-      const resumeLink = e.target.closest('a[href*="drive.google.com"], a[aria-label*="Resume" i]');
+      const resumeLink = e.target.closest('a[href*="Resume.pdf"], a[href*="resume.pdf"], a[href*="drive.google.com"], a[aria-label*="Resume" i]');
       if (resumeLink) {
         trackEvent('resume_click', {
           event_category: 'recruiter_intent',
