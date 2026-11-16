@@ -223,6 +223,67 @@
     }
   }
 
+  /**
+   * GA4 Custom Event Tracking
+   * Tracks high-intent visitor actions (Resume views, LinkedIn visits, Email copies, Project clicks)
+   */
+  function trackEvent(eventName, eventParams) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, eventParams || {});
+    }
+  }
+
+  function initAnalyticsTracking() {
+    document.addEventListener('click', (e) => {
+      // 1. Resume Clicks (Header nav & Footer action card)
+      const resumeLink = e.target.closest('a[href*="drive.google.com"], a[aria-label*="Resume" i]');
+      if (resumeLink) {
+        trackEvent('resume_click', {
+          event_category: 'recruiter_intent',
+          link_location: resumeLink.closest('header') ? 'header_nav' : 'footer'
+        });
+        return;
+      }
+
+      // 2. LinkedIn Clicks
+      const linkedinLink = e.target.closest('a[href*="linkedin.com"]');
+      if (linkedinLink) {
+        trackEvent('linkedin_click', {
+          event_category: 'social_profile'
+        });
+        return;
+      }
+
+      // 3. Email Copy / Click
+      const emailBtn = e.target.closest('#footer-copy-email-btn, a[href^="mailto:"]');
+      if (emailBtn) {
+        trackEvent('contact_email_click', {
+          event_category: 'recruiter_intent'
+        });
+        return;
+      }
+
+      // 4. Case Study Card Clicks
+      const projectLink = e.target.closest('.project-item, .cs-next-card, a[href*="/work/"], a[href$=".html"]');
+      if (projectLink && !projectLink.closest('.case-study-nav__back')) {
+        const title = projectLink.querySelector('.project-item__title, .cs-next-title')?.textContent?.trim() || projectLink.getAttribute('href');
+        trackEvent('case_study_click', {
+          event_category: 'portfolio_engagement',
+          case_study_name: title
+        });
+        return;
+      }
+
+      // 5. Interactive Hanging Cat Click
+      const catBtn = e.target.closest('#hero-hanging-cat');
+      if (catBtn) {
+        trackEvent('cat_meow_click', {
+          event_category: 'delight'
+        });
+      }
+    }, { passive: true });
+  }
+
   // Execute on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -230,12 +291,14 @@
       initFooterCopy();
       initSmoothScroll();
       initScrollToTop();
+      initAnalyticsTracking();
     });
   } else {
     injectSharedFooter();
     initFooterCopy();
     initSmoothScroll();
     initScrollToTop();
+    initAnalyticsTracking();
   }
 
 })();
